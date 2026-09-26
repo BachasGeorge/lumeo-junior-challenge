@@ -9,8 +9,11 @@ Claude (specifically Opus 5.5).
 ## How I used them
 
 I used the AI as a consultant for some decisions and to write me code. The general ideas were mine and we just worked on them to
-fill holes in my logic. I also used to to explain to me some existing architecture logic and code that I did not fully understand.
-
+fill holes in my logic. Testing cases were mostly mine and the LLM suggested some more and wrote the code. Security and validation
+checks in the app.ts file were mostly suggested and implemented from the LLM due to lack of knowledge on the field. Same for the
+front end part of the challenge, I provided the wanted changes and with a bit of directing the LLM did the job.
+I also used to to explain to me some existing architecture logic and code that I did not fully understand, for example how the repository.ts
+works now that we don't use an actual API to get our data.
 
 ## Example of an incorrect or incomplete result
 
@@ -22,9 +25,11 @@ Explain the checks, tests, documentation, or reasoning you used.
 
 ## My review and modifications
 
-Describe the parts you personally reviewed, rewrote, or validated.
+I reviewd all the parts that the LLM wrote and asked for validation from it's part. If I considered the validation correct and the final result
+acceptable then no changes were made. In some cases small fixes were made but nothing too serious.
 
 ## Additional notes
 
-Start time: Saturday 26/09/2026 12:45
-Include anything else that helps the reviewer understand how you worked with AI responsibly.
+I do not fully agree with the EPSILON usage in the verification.ts. It is used to eliminate extremelly small differences that occur due to how
+the computer handles substraction, but I believe and I know that there is a better way, I can even implement it but it will be complicated. The
+task is to make simple solutions so I kept the LLMs way.

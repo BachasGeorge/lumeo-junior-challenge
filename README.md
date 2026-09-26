@@ -68,7 +68,14 @@ Before submission, replace this section with:
 	of the previous 3 matching cases then we found the matching record(s). A corresponding status is returned and the verification ends.
 	
 - Security and tenant-isolation decisions.
-
+	
+	The tenant id is read exclusively from the header, never from the body or URL. This way tenant-a cannot access tenant-b info.
+	Every endpoint that needs a tenant uses the same check, so no route can skip the check or implement it differently. The validation of 
+	the tenant and invoice ids rejects early any that don't pass it so no further info is exposed. Every tenant can only request his own invoices,
+	trying to access another tenants invoices returns an error. Every tenant is isoleted and their invoices are also isolated.
+	Tenant isolation is demonstrated by inv-a-004, which has the same identity as a tenant-b myDATA record. Verifying it as tenant-a
+	returns not_found (API test "does not match another tenant's myDATA record"). Other tests show that another tenant's invoice returns 404,
+	including when a different tenant id is sent in the request body.
 
 
 - Assumptions and known limitations.
