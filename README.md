@@ -55,7 +55,8 @@ Before submission, replace this section with:
 	First we check for an exact match of the invoice's myDATA MARK if the invoice has a MARK. If no record with this myDATA MARK exists
 	then "not_found" is returned. Then we look for records that have an exact match of the invoice's myDATA UID if the invoice has a UID.
 	If no record with a UID matches our invoice's then "not_found" is returned. If either of those exist and a record matches it we move
-	to the next step where we check the amounts. The invoices that don't have a MARK or UID are checked by comparing the fields:
+	to the next step where we check the record(s) status. If the record(s) is not cancelled then we check the amounts. The invoices that
+	don't have a MARK or UID are checked by comparing the fields:
 	- Issuer VAT number
 	- Receiver VAT number
 	- Issue date
@@ -63,8 +64,8 @@ Before submission, replace this section with:
 	- Series
 	- Sequential number.
 	If one or more field differ a corresponding status is returned. If we find records that have matching fields with our invoice
-	then we check the amounts. If the amounts match in any of the previous 3 matching cases then we found the matching record(s),
-	otherwise a corresponding status is returned and the verification ends.
+	then we check the status of the record(s) and then the amounts if the record(s) are not cancelled. If the amounts match in any
+	of the previous 3 matching cases then we found the matching record(s). A corresponding status is returned and the verification ends.
 - Security and tenant-isolation decisions.
 - Assumptions and known limitations.
 	The matching approach has a major problem where if a record with the myDATA MARK or UID of our invoice exists then we skip
