@@ -31,7 +31,7 @@ const IDENTITY_FIELDS = [
 /**
  * Amounts compared between Lumeo and myDATA.
  * Differences up to €0.01 are accepted. EPSILON absorbs floating point noise
- * (e.g. 12.41 - 12.40 = 0.010000000000000009).
+ * (e.g. 1.01 - 1 = 0.010000000000000009 = 0.010000000000000009).
  */
 const AMOUNT_FIELDS = ["netAmount", "vatAmount", "grossAmount"] as const;
 const TOLERANCE = 0.01;

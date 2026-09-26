@@ -11,6 +11,7 @@ Claude (specifically Opus 5.5).
 I used the AI as a consultant for some decisions and to write me code. The general ideas were mine and we just worked on them to
 fill holes in my logic. I also used to to explain to me some existing architecture logic and code that I did not fully understand.
 
+
 ## Example of an incorrect or incomplete result
 
 Describe at least one suggestion that was incorrect, insecure, incomplete, or unsuitable for this project.

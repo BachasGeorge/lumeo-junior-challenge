@@ -66,13 +66,19 @@ Before submission, replace this section with:
 	If one or more field differ a corresponding status is returned. If we find records that have matching fields with our invoice
 	then we check the status of the record(s) and then the amounts if the record(s) are not cancelled. If the amounts match in any
 	of the previous 3 matching cases then we found the matching record(s). A corresponding status is returned and the verification ends.
+	
 - Security and tenant-isolation decisions.
+
+
+
 - Assumptions and known limitations.
+
 	The matching approach has a major problem where if a record with the myDATA MARK or UID of our invoice exists then we skip
 	the field matching and we move to the amounts comparisson. If the amounts are also matching then we get a false "verified".
 	The same could also happen if the myDATA MARK or UID exists but it's not a match but the rest of the fields and the
 	amounts match a record. In this case we get a false "not_found"
 	A suggestion would be to also check the fields in order to be 100% sure than the invoice matches with the correct record.
+	
 - What you would change for a production implementation.
 
 ## Important boundaries
