@@ -4,7 +4,7 @@ Rename this file to `AI_USAGE.md` and complete it before submitting.
 
 ## Tools used
 
-List the AI/LLM tools you used.
+Claude (specifically Opus 5.5).
 
 ## How I used them
 
@@ -24,4 +24,5 @@ Describe the parts you personally reviewed, rewrote, or validated.
 
 ## Additional notes
 
+Start time: Saturday 26/09/2026 12:45
 Include anything else that helps the reviewer understand how you worked with AI responsibly.
